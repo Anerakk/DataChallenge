@@ -27,4 +27,5 @@ for prizes in nobel['prizes']:
 
 prizes = pd.DataFrame({'category': cat, 'year': year, 'share': share}, index = names)
 print("hello World")
+print("chimichangas")
 #%%-----------------------------------------
