@@ -25,5 +25,6 @@ for prizes in nobel['prizes']:
         names.append(prizes['laureates'][i]['firstname'] +" "+ prizes['laureates'][i]['surname'])
         share.append("1/" + prizes['laureates'][i]['share'])
 
-nobel_prizes = pd.DataFrame({'category': cat, 'year': year, 'share': share}, index = names)
+prizes = pd.DataFrame({'category': cat, 'year': year, 'share': share}, index = names)
+print("hello World")
 #%%-----------------------------------------
