@@ -6,9 +6,6 @@ Created on Tue Feb 13 15:56:48 2018
 @author: bryceanderson
 """
 
-# STEPHEN WAS HERE.
-# DREW WAS HERE.
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,8 +25,32 @@ for prizes in nobel['prizes']:
         names.append(prizes['laureates'][i]['firstname'] +" "+ prizes['laureates'][i]['surname'])
         share.append("1/" + prizes['laureates'][i]['share'])
 
-prizes = pd.DataFrame({'category': cat, 'year': year, 'share': share}, index = names)
-print("hello World")
-print("chimichangas")
-#Hello
+nobel_prizes = pd.DataFrame({'category': cat, 'year': year, 'share': share}, index = names)
 #%%-----------------------------------------
+Born = []
+BornC = []
+BornCC = []
+Died = []
+DiedC = []
+DiedCC = []
+Name = []
+Gender = []
+AwardCity = []
+AwardCountry = []
+AwardCategory = []
+Motivation = []
+AwardShare = []
+AwardYear = []
+
+for laureate in nobel['laureates']:
+    Born.append(laureate['born'])
+    BornC.append(laureate['bornCountry'])
+    BornCC.append(laureate['bornCountryCode'])
+    Died.append(laureate['died'])
+    DiedC.append(laureate['diedCity'])
+    DiedCC.append(laureate['diedCountryCode'])
+    Name.append(laureate['firstname'])
+    Gender.append(laureate['gender'])
+    for i in range(len(laureate['prizes'])):
+        Motivation.append(laureate['prizes'][i]['motivation'])
+print(Motivation)
