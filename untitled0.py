@@ -26,7 +26,10 @@ for prizes in nobel['prizes']:
         share.append("1/" + prizes['laureates'][i]['share'])
 
 nobel_prizes = pd.DataFrame({'category': cat, 'year': year, 'share': share}, index = names)
-#%%-----------------------------------------
+for laureate in nobel['laureates']:
+    for i in range(len(nobel['laureates'])):
+        names.append(laureate[i]['firstname'])
+#%%
 Born = []
 BornC = []
 BornCC = []
@@ -47,10 +50,9 @@ for laureate in nobel['laureates']:
     BornC.append(laureate['bornCountry'])
     BornCC.append(laureate['bornCountryCode'])
     Died.append(laureate['died'])
-    DiedC.append(laureate['diedCity'])
-    DiedCC.append(laureate['diedCountryCode'])
-    Name.append(laureate['firstname'])
+    Name.append(laureate['firstname'] + " " + laureate['surname'])
     Gender.append(laureate['gender'])
-    for i in range(len(laureate['prizes'])):
-        Motivation.append(laureate['prizes'][i]['motivation'])
+    #for i in range(len(laureate['prizes'])):
+       # Motivation.append(laureate['prizes'][i]['motivation'])
 print(Motivation)
+#%%
